@@ -4,11 +4,15 @@
 #define maxn 85
 
 char s[maxn];
+int answer[85];
 int main()
 {
-    int count = 0;
-    while (scanf("%s", s) == 1)
+    int kase;
+    memset(answer, 0, sizeof(answer));
+    scanf("%d", &kase);
+    for (int i = 0; i < kase; i++)
     {
+        scanf("%s", s);
         int flag = 0, ans = 0;
         for (int i = 0; i < strlen(s); i++)
         {
@@ -18,7 +22,11 @@ int main()
                 flag += 1;
             ans += flag;
         }
-        printf("Case %d:\nscore = %d", ++count, ans);
+        answer[i] = ans;
+    }
+    for (int i = 0; i < kase; i++)
+    {
+        printf("%d\n", answer[i]);
     }
     return 0;
 }

@@ -7,7 +7,7 @@ int main()
     {
         if (c == '"')
         {
-            printf("%s", q ? "¡°" : "¡±");
+            printf("%s", q ? "``" : "''");
             q = !q;
         }
         else
